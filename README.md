@@ -44,9 +44,9 @@ This is the **frontend** of the Uber Clone project, built using **React.js**, **
 
 3. **Create `.env` File**
    ```env
-   VITE_BASE_URL=http://localhost:4000
-   VITE_GOOGLE_MAP_API=AIzaSyAbPiuom3a5TVOlx6tSkdZLnjfWNOgM5jw
-   VITE_STRIPE_PUBLIC_KEY=pk_test_51RATM8K1pyCkxKDkbPK3htQFFqq0rmFaQBXcF7Y9RqK9x3AcQQowPcDMI6OVss8zS1mN6F2KN09obEEKhWRj76Xo001FGo3ITp
+   VITE_BASE_URL = http://localhost:4000
+   VITE_GOOGLE_MAP_API = YOUR-GOOGLE-MAP-API
+   VITE_STRIPE_PUBLIC_KEY = YOUR-STRIPE-KEY
    ```
 
 4. **Run the Dev Server**
