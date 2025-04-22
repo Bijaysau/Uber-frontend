@@ -109,17 +109,16 @@ This is the **frontend** of the Uber Clone project, built using **React.js**, **
 - **Driver Ride Request Panel**
 
 ---
+## 📰 API Integration
+
+This frontend interacts with the backend at:  
+🔗 **Backend URL:** [https://tts-backend-5jnm.onrender.com](https://uber-backend-8ini.onrender.com)
+
 
 ## 🚀 Deployment
 
-1. **Build your app**
-   ```bash
-   npm run build
-   ```
+- **Live App on Vercel:** 🌍 [Check it Out](uber-frontend-o6g295t3u-bijaysaus-projects.vercel.app)
 
-2. **Deploy `/dist`** to hosting platforms like **Netlify**, **Vercel**, or **Firebase Hosting**.
-
----
 
 ## 🤝 Contributing
 
