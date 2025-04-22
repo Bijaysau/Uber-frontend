@@ -1,113 +1,138 @@
-# 🚗 **Uber Clone - Frontend**
+# 🚗 Uber Clone – Frontend
 
-This is the **frontend** part of the Uber Clone project, built with **React**, **Tailwind CSS**, and **Vite**. It replicates the core features of an Uber-like ride-sharing app, including user login/signup, ride booking, driver interface, payment integration, and real-time ride tracking.
+This is the **frontend** of the Uber Clone project, built using **React.js**, **Vite**, **Tailwind CSS**, **Clerk**, **Stripe**, and **Socket.IO**. It simulates real-world ride-hailing functionality like user & driver auth, ride booking, maps, payments, and real-time updates.
 
-## 📱 **Key Features**
-- **User Authentication:** Secure login/signup for both users and drivers using **Clerk**.
-- **Real-time Ride Tracking:** Interactive maps using **Leaflet** and **React-Leaflet** for tracking rides.
-- **Ride Booking:** Users can book rides and select from different ride options (UberX, UberMoto, UberAuto).
-- **Payment Integration:** Payment gateway using **Stripe** for cash and online payments.
-- **Driver Dashboard:** Drivers can accept/decline ride requests, view user details, and track earnings.
-- **Responsive Design:** Fully responsive UI built with **Tailwind CSS**.
+---
 
-## 🔧 **Technologies Used**
-- **React.js** – Frontend framework
-- **Vite** – Development server and build tool
-- **Tailwind CSS** – Utility-first CSS framework for styling
-- **React Router DOM** – For page routing and navigation
-- **Leaflet & React-Leaflet** – For map integration
-- **Clerk** – For user and driver authentication
-- **Stripe** – For payment processing
-- **Socket.IO** – For real-time communication (ride status updates)
+## 🌟 Key Features
 
-## 🛠️ **Installation & Setup**
+- 🔐 **User & Driver Authentication** – Login and signup with **Clerk**  
+- 🗺 **Interactive Map** – Track rides using **Leaflet** and **React-Leaflet**  
+- 🚕 **Ride Booking System** – Choose ride types (UberX, Moto, Auto), select pickup & drop  
+- 💳 **Payments** – Pay by **cash or Stripe** (online)  
+- 👨‍✈️ **Driver Dashboard** – Accept/Decline rides, view fare, location, and earnings  
+- 📱 **Responsive Design** – Optimized for all screen sizes using **Tailwind CSS**  
+- ⚡ **Real-Time Updates** – Ride status updates via **Socket.IO**
 
-### **1. Clone the repository:**
-```bash
-git clone https://github.com/your-username/uber-clone-frontend.git
-2. Navigate to the project directory:
-bash
-Copy
-Edit
-cd uber-clone-frontend
-3. Install dependencies:
-bash
-Copy
-Edit
-npm install
-4. Set up environment variables:
-Create a .env file in the root of the project and add your Clerk and Stripe keys.
+---
 
-Example:
+## ⚙️ Tech Stack
 
-ini
-Copy
-Edit
-VITE_CLERK_FRONTEND_API=your-clerk-frontend-api
-VITE_STRIPE_PUBLIC_KEY=your-stripe-public-key
-5. Run the development server:
-bash
-Copy
-Edit
-npm run dev
-Your frontend app will be available at http://localhost:3000.
+- **React** – Frontend library  
+- **Vite** – Lightning-fast build tool  
+- **Tailwind CSS** – Utility-first CSS framework  
+- **React Router DOM** – Page routing  
+- **Leaflet & React-Leaflet** – Maps & location  
+- **Socket.IO-client** – Real-time communication  
+- **Clerk** – Authentication  
+- **Stripe.js** – Online payments
 
-📝 Project Structure
-bash
-Copy
-Edit
+---
+
+## 🛠 Installation & Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/uber-clone-frontend.git
+   cd uber-clone-frontend
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Create `.env` File**
+   ```env
+   VITE_BASE_URL=http://localhost:4000
+   VITE_GOOGLE_MAP_API=AIzaSyAbPiuom3a5TVOlx6tSkdZLnjfWNOgM5jw
+   VITE_STRIPE_PUBLIC_KEY=pk_test_51RATM8K1pyCkxKDkbPK3htQFFqq0rmFaQBXcF7Y9RqK9x3AcQQowPcDMI6OVss8zS1mN6F2KN09obEEKhWRj76Xo001FGo3ITp
+   ```
+
+4. **Run the Dev Server**
+   ```bash
+   npm run dev
+   ```
+
+   App will run at: `http://localhost:5173`
+
+---
+
+## 📁 Project Structure
+
+```
 ├── src/
-│   ├── assets/         # Images, icons, etc.
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components (Home, Login, Signup, etc.)
-│   ├── App.jsx         # Main App component
-│   ├── index.jsx       # Entry point for React
-│   └── services/       # API calls, payment integration, etc.
-└── .env                # Environment variables
-📸 Screenshots
-Homepage
+│   ├── assets/                     # Static assets (images/icons)
+│   ├── components/                 # Reusable components
+│   │   ├── LocationSearchPanel.jsx
+│   │   ├── MapView.jsx
+│   │   ├── PaymentForm.jsx
+│   │   ├── RideOptions.jsx
+│   │   └── StripePayment.jsx
+│   ├── context/                   # Global state (Auth/User/Captain)
+│   │   ├── CaptainContext.jsx
+│   │   └── UserContext.jsx
+│   ├── pages/                     # Page components
+│   │   ├── CaptainHome.jsx
+│   │   ├── CaptainLogin.jsx
+│   │   ├── CaptainLogout.jsx
+│   │   ├── CaptainProtectWrapper.jsx
+│   │   ├── CaptainSignup.jsx
+│   │   ├── Home.jsx
+│   │   ├── Section.jsx
+│   │   ├── Start.jsx
+│   │   ├── UserLogin.jsx
+│   │   ├── UserLogout.jsx
+│   │   ├── UserProtectWrapper.jsx
+│   │   └── UserSignup.jsx
+│   ├── utils/                     # Helper files
+│   │   ├── App.css
+│   │   ├── index.css
+│   ├── App.jsx                    # Main App component
+│   ├── index.jsx                  # React entry point
+│   ├── main.jsx                   # Main rendering logic
+│
+├── .env                           # Environment variables
+├── .gitignore
+├── index.html                     # HTML template
+├── eslint.config.js              # Linter config
+```
 
-Driver Dashboard
+---
 
-🚀 Deployment
-To deploy the frontend, run the following command to create a production build:
+## 📷 Screenshots
 
-bash
-Copy
-Edit
-npm run build
-Then deploy the dist folder to platforms like Netlify or Vercel.
+> (Add screenshots here if available)
 
-💡 Contributing
-Feel free to fork the repository, create a new branch, and submit a pull request with your improvements.
+- **Home Page**
+- **User Booking Interface**
+- **Driver Ride Request Panel**
 
-🔗 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
-💬 Contact
-For questions or inquiries, feel free to reach out to me:
+## 🚀 Deployment
 
-Email: your.email@example.com
+1. **Build your app**
+   ```bash
+   npm run build
+   ```
 
-GitHub: @your-username
+2. **Deploy `/dist`** to hosting platforms like **Netlify**, **Vercel**, or **Firebase Hosting**.
 
-LinkedIn: Your Name
+---
 
-⭐️ Star the repository if you found it useful!
+## 🤝 Contributing
 
-markdown
-Copy
-Edit
+Want to help? Fork the repo and submit a pull request!
 
-### Sections Explained:
-- **Key Features**: Highlights the frontend functionalities like authentication, booking, and real-time tracking.
-- **Technologies Used**: Lists the core technologies for frontend development.
-- **Installation & Setup**: Clear instructions for setting up the project locally.
-- **Project Structure**: An overview of the file organization.
-- **Screenshots**: Example images to showcase the UI.
-- **Deployment**: How to build and deploy the frontend.
-- **Contributing**: Invite for others to contribute.
-- **Contact**: Provides ways to reach out for support or inquiries.
+---
 
-This README is tailored to the frontend-only aspect of your project. Let me know if you need any more customizations!
+## 📬 Contact
 
+- 📧 Email: your.email@example.com  
+- 🐙 GitHub: [@your-username](https://github.com/your-username)  
+- 🔗 LinkedIn: [Your Name](https://linkedin.com/in/your-name)
+
+---
+
+> Built with ❤️ using React & Tailwind. Let’s ride the future together.
