@@ -5,12 +5,8 @@ function Section() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-black px-6 py-4 flex justify-between items-center">
-        <img
-          className="w-24"
-          src="https://www.texasrealsanta.com/wp-content/uploads/2024/10/uber-logo-white.png"
-          alt="Uber Logo"
-        />
+      <header className="bg-black text-white px-6 py-4 flex justify-between items-center">
+        <h1 className="text-2xl font-semibold">Uber</h1>
         <div>
           <Link
             to="/login"

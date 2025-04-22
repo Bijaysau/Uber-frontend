@@ -628,7 +628,8 @@ import RideOptions from "../components/RideOptions";
 import PaymentForm from "../components/PaymentForm";
 import { calculateDistanceKm } from "../utils/distance";
 import { toast } from "react-hot-toast";
-
+import { useNavigate } from "react-router-dom";
+import { BiLogOut } from "react-icons/bi";
 function Home() {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -639,11 +640,29 @@ function Home() {
   const [price, setPrice] = useState(0);
   const [distanceKm, setDistanceKm] = useState(0);
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/users/logout"); // This will load the UserLogout.jsx component
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-black text-white py-4 px-8 flex justify-between items-center">
         <h1 className="text-2xl font-semibold">Uber</h1>
+
+        <div className="relative group">
+          <button
+            onClick={handleLogout}
+            className="font-bold py-2 px-4 rounded text-2xl"
+          >
+            <BiLogOut />
+          </button>
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm bg-gray-700 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+            Logout
+          </span>
+        </div>
       </header>
 
       {/* Main */}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BiLogOut } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import {
   MapPin,
   DollarSign,
@@ -30,6 +32,12 @@ function CaptainHome() {
     setRideRequest(null);
   };
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/captains/logout"); // This will load the UserLogout.jsx component
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -45,6 +53,18 @@ function CaptainHome() {
         >
           {online ? "Go Offline" : "Go Online"}
         </button>
+
+        <div className="relative group">
+          <button
+            onClick={handleLogout}
+            className="font-bold py-2 px-4 rounded text-2xl"
+          >
+            <BiLogOut />
+          </button>
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm bg-gray-700 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+            Logout
+          </span>
+        </div>
       </header>
 
       {/* Split screen */}

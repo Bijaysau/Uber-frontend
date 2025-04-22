@@ -265,7 +265,7 @@ function CaptainSignup() {
         lastname: lastname,
       },
       email: email,
-      mobile:mobile,
+      mobile: mobile,
       password: password,
       vehicle: {
         color: vehicleColor,
@@ -300,12 +300,8 @@ function CaptainSignup() {
   // }, [captainData]);
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
-      <div className="bg-black w-full px-5 py-4">
-        <img
-          className="w-24"
-          src="https://www.texasrealsanta.com/wp-content/uploads/2024/10/uber-logo-white.png"
-          alt="Uber Logo"
-        />
+      <div className="bg-black text-white w-full px-5 py-4">
+        <h1 className="text-2xl font-semibold">Uber</h1>
       </div>
       <div className="w-full max-w-md px-6 mt-12">
         <form onSubmit={submitHandler}>
@@ -342,7 +338,7 @@ function CaptainSignup() {
             type="email"
             placeholder="Enter your email address"
           />
-     <h3 className="text-lg font-semibold mb-2 text-start">
+          <h3 className="text-lg font-semibold mb-2 text-start">
             What's your Mobile-No?
           </h3>
           <input

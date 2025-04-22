@@ -34,12 +34,8 @@ function CaptainLogin() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
       {/* ✅ Full-Width Header Without Gaps */}
-      <div className="bg-black w-full px-5 py-4">
-        <img
-          className="w-24"
-          src="https://www.texasrealsanta.com/wp-content/uploads/2024/10/uber-logo-white.png"
-          alt="Uber Logo"
-        />
+      <div className="bg-black text-white w-full px-5 py-4">
+        <h1 className="text-2xl font-semibold">Uber</h1>
       </div>{" "}
       <div className="w-full max-w-md px-6 mt-12">
         <form
